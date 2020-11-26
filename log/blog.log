@@ -1,0 +1,529 @@
+2020-10-26 21:51:32.385  INFO 13484 --- [restartedMain] com.bilibili.BlogApplication             : Starting BlogApplication on DESKTOP-QPE2857 with PID 13484 (D:\编程\blog\target\classes started by 北极光。 in D:\编程\blog)
+2020-10-26 21:51:32.389 DEBUG 13484 --- [restartedMain] com.bilibili.BlogApplication             : Running with Spring Boot v2.1.15.RELEASE, Spring v5.1.16.RELEASE
+2020-10-26 21:51:32.389  INFO 13484 --- [restartedMain] com.bilibili.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-10-26 21:51:32.444  INFO 13484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-26 21:51:32.444  INFO 13484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-26 21:51:34.889  INFO 13484 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-26 21:51:34.909  INFO 13484 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-26 21:51:34.909  INFO 13484 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-10-26 21:51:34.921  INFO 13484 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-10-26 21:51:34.921  INFO 13484 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-10-26 21:51:34.921  INFO 13484 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-10-26 21:51:34.945  INFO 13484 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-10-26 21:51:35.024  INFO 13484 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-26 21:51:35.024  INFO 13484 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2580 ms
+2020-10-26 21:51:35.851  INFO 13484 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-26 21:51:35.937  INFO 13484 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-26 21:51:36.723  INFO 13484 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-26 21:51:36.762  INFO 13484 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-26 21:51:36.766  INFO 13484 --- [restartedMain] com.bilibili.BlogApplication             : Started BlogApplication in 4.965 seconds (JVM running for 6.236)
+2020-10-26 21:51:50.571  INFO 13484 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-26 21:51:50.571  INFO 13484 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-26 21:51:50.587  INFO 13484 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2020-10-26 21:51:50.622  INFO 13484 --- [http-nio-8080-exec-1] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.indexController.index', args=[{blog=Blog(id=null, title=null, content=null, firstPicture=null, flag=null, views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, description=null, type=null, typeId=null, tagIds=null, tags=[], user=null, userId=null, comments=[]), org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, Blog(id=null, title=null, content=null, firstPicture=null, flag=null, views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, description=null, type=null, typeId=null, tagIds=null, tags=[], user=null, userId=null, comments=[]), 1]}
+2020-10-26 21:51:50.927 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b
+2020-10-26 21:51:50.944 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listAllBlog_COUNT  : ==> Parameters: 
+2020-10-26 21:51:50.958 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listAllBlog_COUNT  : <==      Total: 1
+2020-10-26 21:51:50.960 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listAllBlog        : ==>  Preparing: SELECT * FROM t_blog b order by update_time desc LIMIT ?
+2020-10-26 21:51:50.962 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listAllBlog        : ==> Parameters: 8(Integer)
+2020-10-26 21:51:50.966 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listAllBlog        : <==      Total: 1
+2020-10-26 21:51:50.969 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:51:50.981 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:51:50.987 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:51:50.988 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:51:50.988 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:51:50.993 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:51:51.001 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:51:51.002 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:51:51.007 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:51:51.008 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:51:51.008 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:51:51.009 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:51:51.013 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.ListType  : ==>  Preparing: SELECT * from t_type
+2020-10-26 21:51:51.014 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.ListType  : ==> Parameters: 
+2020-10-26 21:51:51.016 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.ListType  : <==      Total: 11
+2020-10-26 21:51:51.017 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.017 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 7(Long)
+2020-10-26 21:51:51.018 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.019 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.019 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 8(Long)
+2020-10-26 21:51:51.020 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 1
+2020-10-26 21:51:51.021 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:51:51.021 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:51:51.022 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:51:51.022 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:51:51.022 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:51:51.023 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:51:51.024 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:51:51.024 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:51:51.024 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:51:51.025 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:51:51.025 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:51:51.025 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:51:51.026 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.027 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 9(Long)
+2020-10-26 21:51:51.027 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.028 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.028 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 10(Long)
+2020-10-26 21:51:51.029 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.030 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.031 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 11(Long)
+2020-10-26 21:51:51.032 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.033 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.033 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 13(Long)
+2020-10-26 21:51:51.034 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.035 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.035 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 14(Long)
+2020-10-26 21:51:51.036 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.037 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.037 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 15(Long)
+2020-10-26 21:51:51.038 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.038 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.039 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 16(Long)
+2020-10-26 21:51:51.039 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.039 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.039 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 17(Long)
+2020-10-26 21:51:51.039 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.040 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:51:51.040 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 18(Long)
+2020-10-26 21:51:51.041 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:51:51.043 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.ListTag    : ==>  Preparing: SELECT * from t_tag
+2020-10-26 21:51:51.043 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.ListTag    : ==> Parameters: 
+2020-10-26 21:51:51.044 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.ListTag    : <==      Total: 11
+2020-10-26 21:51:51.045 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.046 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 1(Long)
+2020-10-26 21:51:51.048 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 1
+2020-10-26 21:51:51.049 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:51:51.049 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:51:51.050 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:51:51.050 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:51:51.050 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:51:51.051 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:51:51.052 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:51:51.052 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:51:51.053 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:51:51.054 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:51:51.054 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:51:51.054 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:51:51.055 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.055 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 2(Long)
+2020-10-26 21:51:51.056 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:51:51.056 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.056 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 3(Long)
+2020-10-26 21:51:51.057 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:51:51.057 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.057 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 4(Long)
+2020-10-26 21:51:51.059 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 1
+2020-10-26 21:51:51.060 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.061 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 5(Long)
+2020-10-26 21:51:51.061 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:51:51.062 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.062 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 6(Long)
+2020-10-26 21:51:51.062 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:51:51.063 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.063 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 7(Long)
+2020-10-26 21:51:51.063 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:51:51.064 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.064 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 8(Long)
+2020-10-26 21:51:51.064 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:51:51.065 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.065 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 9(Long)
+2020-10-26 21:51:51.066 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:51:51.066 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.066 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 10(Long)
+2020-10-26 21:51:51.067 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:51:51.067 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:51:51.067 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 11(Long)
+2020-10-26 21:51:51.068 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:51:51.069 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.m.BlogMapper.getAllRecommendBlog     : ==>  Preparing: select * from t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4;
+2020-10-26 21:51:51.070 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.m.BlogMapper.getAllRecommendBlog     : ==> Parameters: 
+2020-10-26 21:51:51.071 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.m.BlogMapper.getAllRecommendBlog     : <==      Total: 1
+2020-10-26 21:51:51.071  INFO 13484 --- [http-nio-8080-exec-1] com.bilibili.log.LogAspect               : Result : index
+2020-10-26 21:51:52.265  INFO 13484 --- [http-nio-8080-exec-2] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.indexController.newBlogs', args=[{}]}
+2020-10-26 21:51:52.265 DEBUG 13484 --- [http-nio-8080-exec-2] c.b.mapper.BlogMapper.listAllBlog        : ==>  Preparing: select * from t_blog b order by b.update_time desc
+2020-10-26 21:51:52.266 DEBUG 13484 --- [http-nio-8080-exec-2] c.b.mapper.BlogMapper.listAllBlog        : ==> Parameters: 
+2020-10-26 21:51:52.269 DEBUG 13484 --- [http-nio-8080-exec-2] c.b.mapper.BlogMapper.listAllBlog        : <==      Total: 1
+2020-10-26 21:51:52.270 DEBUG 13484 --- [http-nio-8080-exec-2] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:51:52.270 DEBUG 13484 --- [http-nio-8080-exec-2] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:51:52.273 DEBUG 13484 --- [http-nio-8080-exec-2] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:51:52.274 DEBUG 13484 --- [http-nio-8080-exec-2] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:51:52.275 DEBUG 13484 --- [http-nio-8080-exec-2] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:51:52.276 DEBUG 13484 --- [http-nio-8080-exec-2] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:51:52.277 DEBUG 13484 --- [http-nio-8080-exec-2] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:51:52.278 DEBUG 13484 --- [http-nio-8080-exec-2] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:51:52.279 DEBUG 13484 --- [http-nio-8080-exec-2] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:51:52.279 DEBUG 13484 --- [http-nio-8080-exec-2] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:51:52.280 DEBUG 13484 --- [http-nio-8080-exec-2] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:51:52.280 DEBUG 13484 --- [http-nio-8080-exec-2] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:51:52.281  INFO 13484 --- [http-nio-8080-exec-2] com.bilibili.log.LogAspect               : Result : _fragments :: newblogList
+2020-10-26 21:52:05.769  INFO 13484 --- [http-nio-8080-exec-6] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.AboutController.about', args=[]}
+2020-10-26 21:52:05.772  INFO 13484 --- [http-nio-8080-exec-6] com.bilibili.log.LogAspect               : Result : about
+2020-10-26 21:52:06.115  INFO 13484 --- [http-nio-8080-exec-10] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.indexController.newBlogs', args=[{}]}
+2020-10-26 21:52:06.115 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.BlogMapper.listAllBlog        : ==>  Preparing: select * from t_blog b order by b.update_time desc
+2020-10-26 21:52:06.115 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.BlogMapper.listAllBlog        : ==> Parameters: 
+2020-10-26 21:52:06.118 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.BlogMapper.listAllBlog        : <==      Total: 1
+2020-10-26 21:52:06.119 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:06.119 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:06.120 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:06.121 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:06.121 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:06.123 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:06.124 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:06.124 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:06.125 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:06.126 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:06.126 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:06.128 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:06.129  INFO 13484 --- [http-nio-8080-exec-10] com.bilibili.log.LogAspect               : Result : _fragments :: newblogList
+2020-10-26 21:52:09.683  INFO 13484 --- [http-nio-8080-exec-1] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.TagShowController.types', args=[-1, {}, 1]}
+2020-10-26 21:52:09.687 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.ListTag    : ==>  Preparing: SELECT * from t_tag
+2020-10-26 21:52:09.688 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.ListTag    : ==> Parameters: 
+2020-10-26 21:52:09.690 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.ListTag    : <==      Total: 11
+2020-10-26 21:52:09.691 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.691 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 1(Long)
+2020-10-26 21:52:09.694 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 1
+2020-10-26 21:52:09.694 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:09.695 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:09.696 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:09.696 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:09.696 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:09.697 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:09.697 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:09.698 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:09.698 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:09.699 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:09.699 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:09.700 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:09.700 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.700 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 2(Long)
+2020-10-26 21:52:09.702 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:09.702 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.702 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 3(Long)
+2020-10-26 21:52:09.703 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:09.703 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.703 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 4(Long)
+2020-10-26 21:52:09.704 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 1
+2020-10-26 21:52:09.705 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.705 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 5(Long)
+2020-10-26 21:52:09.706 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:09.706 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.706 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 6(Long)
+2020-10-26 21:52:09.707 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:09.707 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.707 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 7(Long)
+2020-10-26 21:52:09.714 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:09.715 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.715 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 8(Long)
+2020-10-26 21:52:09.716 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:09.716 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.716 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 9(Long)
+2020-10-26 21:52:09.717 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:09.718 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.718 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 10(Long)
+2020-10-26 21:52:09.719 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:09.719 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.720 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 11(Long)
+2020-10-26 21:52:09.720 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:09.724 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.TagMapper.getTag_COUNT        : ==>  Preparing: SELECT count(0) FROM t_tag WHERE id = ?
+2020-10-26 21:52:09.724 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.TagMapper.getTag_COUNT        : ==> Parameters: 1(Long)
+2020-10-26 21:52:09.725 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.TagMapper.getTag_COUNT        : <==      Total: 1
+2020-10-26 21:52:09.725 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=? LIMIT ?
+2020-10-26 21:52:09.726 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long), 8(Integer)
+2020-10-26 21:52:09.726 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:09.727 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:09.728 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 1(Long)
+2020-10-26 21:52:09.729 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 1
+2020-10-26 21:52:09.729 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:09.729 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:09.730 DEBUG 13484 --- [http-nio-8080-exec-1] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:09.730 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:09.730 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:09.731 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:09.732 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:09.732 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:09.732 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:09.733 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:09.733 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:09.733 DEBUG 13484 --- [http-nio-8080-exec-1] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:09.734  INFO 13484 --- [http-nio-8080-exec-1] com.bilibili.log.LogAspect               : Result : tags
+2020-10-26 21:52:10.062  INFO 13484 --- [http-nio-8080-exec-8] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.indexController.newBlogs', args=[{}]}
+2020-10-26 21:52:10.063 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.BlogMapper.listAllBlog        : ==>  Preparing: select * from t_blog b order by b.update_time desc
+2020-10-26 21:52:10.063 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.BlogMapper.listAllBlog        : ==> Parameters: 
+2020-10-26 21:52:10.064 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.BlogMapper.listAllBlog        : <==      Total: 1
+2020-10-26 21:52:10.065 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:10.065 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:10.067 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:10.068 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:10.068 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:10.069 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:10.070 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:10.070 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:10.071 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:10.071 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:10.071 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:10.072 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:10.072  INFO 13484 --- [http-nio-8080-exec-8] com.bilibili.log.LogAspect               : Result : _fragments :: newblogList
+2020-10-26 21:52:13.024  INFO 13484 --- [http-nio-8080-exec-9] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.ArchiveController.archives', args=[{}]}
+2020-10-26 21:52:13.026 DEBUG 13484 --- [http-nio-8080-exec-9] c.b.mapper.BlogMapper.listAllBlog        : ==>  Preparing: select * from t_blog b order by b.update_time desc
+2020-10-26 21:52:13.027 DEBUG 13484 --- [http-nio-8080-exec-9] c.b.mapper.BlogMapper.listAllBlog        : ==> Parameters: 
+2020-10-26 21:52:13.028 DEBUG 13484 --- [http-nio-8080-exec-9] c.b.mapper.BlogMapper.listAllBlog        : <==      Total: 1
+2020-10-26 21:52:13.029 DEBUG 13484 --- [http-nio-8080-exec-9] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:13.029 DEBUG 13484 --- [http-nio-8080-exec-9] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:13.030 DEBUG 13484 --- [http-nio-8080-exec-9] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:13.031 DEBUG 13484 --- [http-nio-8080-exec-9] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:13.031 DEBUG 13484 --- [http-nio-8080-exec-9] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:13.033 DEBUG 13484 --- [http-nio-8080-exec-9] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:13.034 DEBUG 13484 --- [http-nio-8080-exec-9] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:13.034 DEBUG 13484 --- [http-nio-8080-exec-9] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:13.034 DEBUG 13484 --- [http-nio-8080-exec-9] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:13.035 DEBUG 13484 --- [http-nio-8080-exec-9] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:13.035 DEBUG 13484 --- [http-nio-8080-exec-9] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:13.035 DEBUG 13484 --- [http-nio-8080-exec-9] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:13.036 DEBUG 13484 --- [http-nio-8080-exec-9] c.b.mapper.BlogMapper.findGroupYear      : ==>  Preparing: SELECT date_format(b.update_time,'%Y') as year from t_blog b GROUP by year ORDER BY year DESC
+2020-10-26 21:52:13.037 DEBUG 13484 --- [http-nio-8080-exec-9] c.b.mapper.BlogMapper.findGroupYear      : ==> Parameters: 
+2020-10-26 21:52:13.038 DEBUG 13484 --- [http-nio-8080-exec-9] c.b.mapper.BlogMapper.findGroupYear      : <==      Total: 1
+2020-10-26 21:52:13.039 DEBUG 13484 --- [http-nio-8080-exec-9] c.bilibili.mapper.BlogMapper.findByYear  : ==>  Preparing: SELECT * from t_blog b where date_format(b.update_time,'%Y') = ?
+2020-10-26 21:52:13.040 DEBUG 13484 --- [http-nio-8080-exec-9] c.bilibili.mapper.BlogMapper.findByYear  : ==> Parameters: 2020(String)
+2020-10-26 21:52:13.041 DEBUG 13484 --- [http-nio-8080-exec-9] c.bilibili.mapper.BlogMapper.findByYear  : <==      Total: 1
+2020-10-26 21:52:13.041  INFO 13484 --- [http-nio-8080-exec-9] com.bilibili.log.LogAspect               : Result : archives
+2020-10-26 21:52:13.341  INFO 13484 --- [http-nio-8080-exec-6] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.indexController.newBlogs', args=[{}]}
+2020-10-26 21:52:13.341 DEBUG 13484 --- [http-nio-8080-exec-6] c.b.mapper.BlogMapper.listAllBlog        : ==>  Preparing: select * from t_blog b order by b.update_time desc
+2020-10-26 21:52:13.341 DEBUG 13484 --- [http-nio-8080-exec-6] c.b.mapper.BlogMapper.listAllBlog        : ==> Parameters: 
+2020-10-26 21:52:13.343 DEBUG 13484 --- [http-nio-8080-exec-6] c.b.mapper.BlogMapper.listAllBlog        : <==      Total: 1
+2020-10-26 21:52:13.343 DEBUG 13484 --- [http-nio-8080-exec-6] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:13.343 DEBUG 13484 --- [http-nio-8080-exec-6] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:13.344 DEBUG 13484 --- [http-nio-8080-exec-6] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:13.345 DEBUG 13484 --- [http-nio-8080-exec-6] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:13.345 DEBUG 13484 --- [http-nio-8080-exec-6] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:13.346 DEBUG 13484 --- [http-nio-8080-exec-6] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:13.346 DEBUG 13484 --- [http-nio-8080-exec-6] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:13.346 DEBUG 13484 --- [http-nio-8080-exec-6] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:13.347 DEBUG 13484 --- [http-nio-8080-exec-6] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:13.347 DEBUG 13484 --- [http-nio-8080-exec-6] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:13.347 DEBUG 13484 --- [http-nio-8080-exec-6] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:13.348 DEBUG 13484 --- [http-nio-8080-exec-6] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:13.348  INFO 13484 --- [http-nio-8080-exec-6] com.bilibili.log.LogAspect               : Result : _fragments :: newblogList
+2020-10-26 21:52:14.406  INFO 13484 --- [http-nio-8080-exec-4] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.TypeShowController.types', args=[-1, {}, 1]}
+2020-10-26 21:52:14.407 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.ListType  : ==>  Preparing: SELECT * from t_type
+2020-10-26 21:52:14.407 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.ListType  : ==> Parameters: 
+2020-10-26 21:52:14.409 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.ListType  : <==      Total: 11
+2020-10-26 21:52:14.409 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.410 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 7(Long)
+2020-10-26 21:52:14.411 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.412 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.412 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 8(Long)
+2020-10-26 21:52:14.413 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 1
+2020-10-26 21:52:14.414 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:14.414 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:14.414 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:14.415 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:14.415 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:14.416 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:14.416 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:14.417 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:14.418 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:14.418 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:14.418 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:14.419 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:14.420 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.420 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 9(Long)
+2020-10-26 21:52:14.421 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.421 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.421 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 10(Long)
+2020-10-26 21:52:14.422 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.422 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.422 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 11(Long)
+2020-10-26 21:52:14.423 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.423 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.423 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 13(Long)
+2020-10-26 21:52:14.424 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.424 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.424 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 14(Long)
+2020-10-26 21:52:14.425 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.426 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.426 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 15(Long)
+2020-10-26 21:52:14.427 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.427 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.427 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 16(Long)
+2020-10-26 21:52:14.428 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.428 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.428 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 17(Long)
+2020-10-26 21:52:14.429 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.429 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.429 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 18(Long)
+2020-10-26 21:52:14.429 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:14.431 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.TypeMapper.getType_COUNT      : ==>  Preparing: SELECT count(0) FROM t_type WHERE id = ?
+2020-10-26 21:52:14.431 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.TypeMapper.getType_COUNT      : ==> Parameters: 8(Long)
+2020-10-26 21:52:14.432 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.TypeMapper.getType_COUNT      : <==      Total: 1
+2020-10-26 21:52:14.432 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=? LIMIT ?
+2020-10-26 21:52:14.433 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long), 8(Integer)
+2020-10-26 21:52:14.435 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:14.436 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:14.436 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 8(Long)
+2020-10-26 21:52:14.439 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 1
+2020-10-26 21:52:14.439 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:14.439 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:14.440 DEBUG 13484 --- [http-nio-8080-exec-4] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:14.440 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:14.440 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:14.441 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:14.442 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:14.442 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:14.442 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:14.443 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:14.443 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:14.443 DEBUG 13484 --- [http-nio-8080-exec-4] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:14.444  INFO 13484 --- [http-nio-8080-exec-4] com.bilibili.log.LogAspect               : Result : types
+2020-10-26 21:52:14.732  INFO 13484 --- [http-nio-8080-exec-10] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.indexController.newBlogs', args=[{}]}
+2020-10-26 21:52:14.733 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.BlogMapper.listAllBlog        : ==>  Preparing: select * from t_blog b order by b.update_time desc
+2020-10-26 21:52:14.733 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.BlogMapper.listAllBlog        : ==> Parameters: 
+2020-10-26 21:52:14.735 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.BlogMapper.listAllBlog        : <==      Total: 1
+2020-10-26 21:52:14.735 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:14.735 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:14.736 DEBUG 13484 --- [http-nio-8080-exec-10] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:14.737 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:14.737 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:14.737 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:14.738 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:14.738 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:14.738 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:14.738 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:14.738 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:14.739 DEBUG 13484 --- [http-nio-8080-exec-10] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:14.739  INFO 13484 --- [http-nio-8080-exec-10] com.bilibili.log.LogAspect               : Result : _fragments :: newblogList
+2020-10-26 21:52:15.943  INFO 13484 --- [http-nio-8080-exec-5] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.indexController.index', args=[{blog=Blog(id=null, title=null, content=null, firstPicture=null, flag=null, views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, description=null, type=null, typeId=null, tagIds=null, tags=[], user=null, userId=null, comments=[]), org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, Blog(id=null, title=null, content=null, firstPicture=null, flag=null, views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, description=null, type=null, typeId=null, tagIds=null, tags=[], user=null, userId=null, comments=[]), 1]}
+2020-10-26 21:52:15.943 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b
+2020-10-26 21:52:15.943 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listAllBlog_COUNT  : ==> Parameters: 
+2020-10-26 21:52:15.944 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listAllBlog_COUNT  : <==      Total: 1
+2020-10-26 21:52:15.944 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listAllBlog        : ==>  Preparing: SELECT * FROM t_blog b order by update_time desc LIMIT ?
+2020-10-26 21:52:15.945 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listAllBlog        : ==> Parameters: 8(Integer)
+2020-10-26 21:52:15.946 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listAllBlog        : <==      Total: 1
+2020-10-26 21:52:15.947 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:15.947 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:15.948 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:15.948 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:15.949 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:15.949 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:15.950 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:15.950 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:15.951 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:15.951 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:15.951 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:15.952 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:15.954 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.ListType  : ==>  Preparing: SELECT * from t_type
+2020-10-26 21:52:15.954 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.ListType  : ==> Parameters: 
+2020-10-26 21:52:15.955 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.ListType  : <==      Total: 11
+2020-10-26 21:52:15.955 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.955 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 7(Long)
+2020-10-26 21:52:15.956 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.956 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.956 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 8(Long)
+2020-10-26 21:52:15.957 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 1
+2020-10-26 21:52:15.957 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:15.957 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:15.958 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:15.959 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:15.959 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:15.961 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:15.962 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:15.962 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:15.962 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:15.962 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:15.963 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:15.963 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:15.964 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.964 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 9(Long)
+2020-10-26 21:52:15.964 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.965 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.965 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 10(Long)
+2020-10-26 21:52:15.965 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.965 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.965 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 11(Long)
+2020-10-26 21:52:15.966 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.967 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.967 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 13(Long)
+2020-10-26 21:52:15.968 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.968 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.968 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 14(Long)
+2020-10-26 21:52:15.969 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.969 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.969 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 15(Long)
+2020-10-26 21:52:15.970 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.970 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.970 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 16(Long)
+2020-10-26 21:52:15.970 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.971 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.971 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 17(Long)
+2020-10-26 21:52:15.971 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.971 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==>  Preparing: select * from t_blog b where b.type_id=?
+2020-10-26 21:52:15.971 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : ==> Parameters: 18(Long)
+2020-10-26 21:52:15.972 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByType     : <==      Total: 0
+2020-10-26 21:52:15.972 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.ListTag    : ==>  Preparing: SELECT * from t_tag
+2020-10-26 21:52:15.972 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.ListTag    : ==> Parameters: 
+2020-10-26 21:52:15.973 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.ListTag    : <==      Total: 11
+2020-10-26 21:52:15.973 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.974 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 1(Long)
+2020-10-26 21:52:15.975 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 1
+2020-10-26 21:52:15.975 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:15.976 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:15.978 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:15.978 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:15.979 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:15.979 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:15.979 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:15.980 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:15.980 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:15.980 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:15.981 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:15.981 DEBUG 13484 --- [http-nio-8080-exec-5] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:15.981 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.982 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 2(Long)
+2020-10-26 21:52:15.982 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:15.982 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.982 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 3(Long)
+2020-10-26 21:52:15.983 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:15.984 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.984 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 4(Long)
+2020-10-26 21:52:15.985 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 1
+2020-10-26 21:52:15.986 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.986 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 5(Long)
+2020-10-26 21:52:15.987 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:15.987 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.987 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 6(Long)
+2020-10-26 21:52:15.987 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:15.988 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.988 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 7(Long)
+2020-10-26 21:52:15.988 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:15.988 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.988 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 8(Long)
+2020-10-26 21:52:15.989 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:15.989 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.989 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 9(Long)
+2020-10-26 21:52:15.990 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:15.990 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.990 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 10(Long)
+2020-10-26 21:52:15.990 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:15.991 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==>  Preparing: select * from t_blog b where b.tag_ids like concat('%',?,'%')
+2020-10-26 21:52:15.991 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : ==> Parameters: 11(Long)
+2020-10-26 21:52:15.991 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.mapper.BlogMapper.listBlogByTag      : <==      Total: 0
+2020-10-26 21:52:15.992 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.m.BlogMapper.getAllRecommendBlog     : ==>  Preparing: select * from t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4;
+2020-10-26 21:52:15.992 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.m.BlogMapper.getAllRecommendBlog     : ==> Parameters: 
+2020-10-26 21:52:15.993 DEBUG 13484 --- [http-nio-8080-exec-5] c.b.m.BlogMapper.getAllRecommendBlog     : <==      Total: 1
+2020-10-26 21:52:15.994  INFO 13484 --- [http-nio-8080-exec-5] com.bilibili.log.LogAspect               : Result : index
+2020-10-26 21:52:16.281  INFO 13484 --- [http-nio-8080-exec-8] com.bilibili.log.LogAspect               : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.bilibili.controller.indexController.newBlogs', args=[{}]}
+2020-10-26 21:52:16.281 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.BlogMapper.listAllBlog        : ==>  Preparing: select * from t_blog b order by b.update_time desc
+2020-10-26 21:52:16.281 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.BlogMapper.listAllBlog        : ==> Parameters: 
+2020-10-26 21:52:16.282 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.BlogMapper.listAllBlog        : <==      Total: 1
+2020-10-26 21:52:16.283 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.UserMapper.getUserById        : ==>  Preparing: select * from t_user where id= ?
+2020-10-26 21:52:16.283 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.UserMapper.getUserById        : ==> Parameters: 1(Long)
+2020-10-26 21:52:16.285 DEBUG 13484 --- [http-nio-8080-exec-8] c.b.mapper.UserMapper.getUserById        : <==      Total: 1
+2020-10-26 21:52:16.286 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TypeMapper.getType   : ==>  Preparing: select * from t_type where id=?
+2020-10-26 21:52:16.286 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TypeMapper.getType   : ==> Parameters: 8(Long)
+2020-10-26 21:52:16.287 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TypeMapper.getType   : <==      Total: 1
+2020-10-26 21:52:16.287 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:16.287 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 4(Long)
+2020-10-26 21:52:16.288 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:16.288 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : ==>  Preparing: select * from t_tag where id=?
+2020-10-26 21:52:16.288 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : ==> Parameters: 1(Long)
+2020-10-26 21:52:16.288 DEBUG 13484 --- [http-nio-8080-exec-8] com.bilibili.mapper.TagMapper.getTag     : <==      Total: 1
+2020-10-26 21:52:16.289  INFO 13484 --- [http-nio-8080-exec-8] com.bilibili.log.LogAspect               : Result : _fragments :: newblogList

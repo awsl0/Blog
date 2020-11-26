@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bilibili.mapper.BlogMapper">
+
+    <resultMap id="blog" type="com.bilibili.pojo.BlogQuery">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="recommend" column="recommend"/>
+        <result property="published" column="published"/>
+        <result property="typeId" column="type_id"/>
+        <association property="type" javaType="com.bilibili.pojo.Type">
+            <id property="id" column="id"/>
+            <result property="name" column="name"/>
+        </association>
+    </resultMap>
+
+
+    <insert id="saveBlog" parameterType="Blog">
+        insert into t_blog(title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,description,type_id,user_id,tag_ids)
+        values (#{title},#{content},#{firstPicture},#{flag},#{views},#{appreciation},#{shareStatement},#{commentabled},#{published},#{recommend},#{createTime},#{updateTime},#{description},#{type.id},#{user.id},#{tagIds})
+    </insert>
+
+    <select id="getBlog" resultType="Blog" parameterType="Long">
+       select *
+        from t_blog b
+        where  b.id = #{id};
+    </select>
+
+    <select id="listAllBlog" resultType="Blog">
+       select *
+        from t_blog b
+       order by b.update_time desc
+    </select>
+
+    <select id="listBlog" resultMap="blog" parameterType="BlogQuery">
+        <bind name="pattern" value="'%' + title + '%'" />
+        select b.id,b.title,b.update_time,b.recommend,b.published,b.type_id,t.id,t.name
+        from t_blog b ,t_type t
+        <where>
+                <if test="1 == 1">
+                    b.type_id = t.id
+                </if>
+                <if test="title != null and title != ''">
+                    and b.title like #{pattern}
+                </if>
+                <if test="typeId != -1">
+                    and b.type_id = #{typeId}
+                </if>
+            and recommend=#{recommend}
+        </where>
+    </select>
+
+    <update id="updateBlog" parameterType="Blog">
+        update t_blog
+        set title=#{title},content=#{content},first_picture=#{firstPicture},flag=#{flag},
+        appreciation=#{appreciation},share_statement=#{shareStatement},commentabled=#{commentabled},published=#{published},
+        recommend=#{recommend},update_time=#{updateTime},description = #{description} ,type_id = #{typeId},tag_ids=#{tagIds}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBlog" parameterType="Long">
+        delete from t_blog where id=#{id}
+    </delete>
+
+    <select id="listBlogByType" resultType="Blog" parameterType="Long">
+        select *
+        from t_blog b
+        where b.type_id=#{id}
+    </select>
+
+    <select id="listBlogByTag" resultType="Blog" parameterType="Long">
+        select *
+        from t_blog b
+        where b.tag_ids like concat('%',#{id},'%')
+    </select>
+
+    <select id="getAllRecommendBlog" resultType="Blog">
+        select * from t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4;
+    </select>
+
+    <select id="searchBlog" parameterType="String" resultType="Blog">
+        <bind name="pattern" value="'%' + query + '%'" />
+        select *
+        from t_blog b
+        where b.title like #{pattern} or b.content like  #{pattern}
+        order by b.update_time desc
+    </select>
+
+    <select id="findGroupYear" resultType="String">
+        SELECT date_format(b.update_time,'%Y') as year from t_blog b GROUP by year ORDER BY year DESC
+    </select>
+
+    <select id="findByYear" resultType="Blog" parameterType="String">
+        SELECT * from t_blog b where date_format(b.update_time,'%Y') = #{year}
+    </select>
+</mapper>
